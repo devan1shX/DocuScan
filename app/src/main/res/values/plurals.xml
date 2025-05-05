@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="page_count_format">
+        <item quantity="one">%d Page</item>
+        <item quantity="other">%d Pages</item>
+    </plurals>
+</resources>

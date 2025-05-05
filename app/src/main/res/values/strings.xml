@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">MC</string>
+    <string name="scan_document">Scan Document</string>
+    <string name="error_scanning">Error starting scanner: %s</string>
+    <string name="scan_canceled">Scan canceled by user.</string>
+    <string name="scan_failed">Scan failed: %s</string>
+    <string name="scan_saved">Scan saved.</string>
+    <string name="file_not_found">Error: Scanned file not found.</string>
+    <string name="no_pdf_viewer">No app found to open PDF files.</string>
+    <string name="could_not_open_pdf">Could not open PDF file.</string>
+    <string name="error_saving_scan">Error saving scanned document.</string>
+    <string name="document_icon_desc">Document Icon</string>
+
+    <string name="action_open">Open</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_delete">Delete</string>
+    <string name="document_options">Document Options</string>
+    <string name="rename_document_title">Rename Document</string>
+    <string name="enter_new_title">Enter new title:</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="confirm_deletion_title">Confirm Deletion</string>
+    <string name="confirm_deletion_message">Are you sure you want to delete \'%s\'?</string>
+    <string name="delete_success">Document deleted.</string>
+    <string name="delete_failed">Failed to delete document.</string>
+    <string name="rename_success">Document renamed.</string>
+    <string name="rename_failed">Failed to rename document.</string>
+    <string name="error_sharing_file">Error sharing file.</string>
+
+    <string name="onboarding_title_1">Go Instantly Paperless</string>
+    <string name="onboarding_desc_1">Scan documents quickly and organize your digital life effortlessly.</string>
+    <string name="onboarding_image_1_desc">Illustration of document scanning</string>
+    <string name="next">Next</string>
+
+    <string name="onboarding_title_2">Unlock Smart Features</string>
+    <string name="onboarding_desc_2">Extract text to create searchable PDFs or listen to documents on the go.</string>
+    <string name="onboarding_image_2_desc">Illustration of smart document features</string>
+    <string name="get_started">Get Started</string>
+
+
+
+    <string name="search_documents_hint">Search documents…</string>
+    <string name="no_documents_available">Scan your first document!</string>
+    <string name="no_search_results">No documents match your search.</string>
+    <string name="no_documents_found">No Documents Found</string> <string name="pdf_not_found">PDF file not found.</string>
+
+    <string name="permission_denied_opening">Permission denied opening file.</string>
+    <string name="error_showing_options">Error showing options.</string>
+    <string name="save">Save</string>
+    <string name="title_cannot_be_empty">Title cannot be empty.</string>
+    <string name="rename_successful">Rename successful.</string>
+
+    <string name="delete">Delete</string>
+    <string name="document_deleted">Document deleted.</string>
+
+
+    <string name="image_to_pdf_title">Create PDF from Images</string>
+    <string name="search_saved_pdfs_hint">Search saved PDFs…</string>
+    <string name="no_saved_pdfs">No PDFs created yet.</string>
+    <string name="no_search_results_pdfs">No saved PDFs match your search.</string>
+    <string name="scan_at_least_one_page">Scan at least one page.</string>
+    <string name="camera_permission_required">Camera permission required.</string>
+    <string name="error_preparing_capture">Error preparing image capture.</string>
+    <string name="warning_cannot_process_page">Warning: Could not process page %1$d.</string>
+    <string name="pdf_created_success">PDF created successfully!</string>
+    <string name="pdf_creation_failed">Failed to create PDF.</string>
+    <string name="no_text_extracted">No text could be extracted.</string>
+    <string name="error_loading_pdfs">Error loading PDFs.</string>
+    <string name="add_page">Add Page</string>
+    <string name="create_pdf">Create PDF</string>
+    <string name="filename_cannot_be_empty">Filename cannot be empty.</string>
+    <string name="invalid_filename">Invalid filename (cannot contain slashes).</string>
+    <string name="rename">Rename</string> <string name="original_file_not_found">Original file not found.</string>
+    <string name="file_already_exists">A file with that name already exists.</string>
+    <string name="rename_failed_uri_error">Rename failed (cannot get new URI).</string>
+    <string name="rename_error">Error during rename.</string>
+    <string name="file_already_gone">File already gone.</string>
+    <string name="delete_error">Error during delete.</string>
+
+
+
+    <string name="no_saved_pdfs_yet">No saved PDFs here yet.\nScan some documents to get started!</string>
+    <string name="no_pdfs_match_search">No saved PDFs match your search.</string>
+    <string name="error_preparing_image_capture">Error preparing for image capture.</string>
+    <string name="could_not_launch_camera">Could not launch the camera app.</string>
+    <string name="add_at_least_one_page">Please scan at least one page first.</string>
+    <string name="no_pages_could_be_processed">No pages could be processed.</string>
+    <string name="pdf_created_successfully">PDF created successfully!</string>
+    <string name="failed_to_create_pdf">Failed to create PDF.</string>
+    <string name="an_unexpected_error_occurred">An unexpected error occurred.</string>
+    <string name="pdf_file_not_found">PDF file not found or inaccessible.</string>
+    <string name="no_pdf_viewer_app_found">No PDF viewer app found on your device.</string>
+
+
+    <string name="rename_pdf_title">Rename PDF</string>
+    <string name="rename_button">Rename</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="invalid_filename_chars">Filename contains invalid characters (/ or \\).</string>
+    <string name="rename_failed_default">Failed to rename PDF.</string>
+    <string name="rename_failed_not_found">Rename failed: Original file not found.</string>
+    <string name="rename_failed_already_exists">Rename failed: A file with that name already exists.</string>
+
+    <string name="rename_failed_context_null">Rename failed (internal error).</string>
+    <string name="rename_failed_exception">An error occurred during rename.</string>
+
+    <string name="delete_pdf_title">Delete PDF</string>
+    <string name="delete_button">Delete</string>
+    <string name="delete_confirmation_message">Are you sure you want to delete \'%1$s\'?</string>
+    <string name="delete_failed_default">Failed to delete PDF.</string>
+    <string name="delete_successful">PDF deleted.</string>
+    <string name="delete_failed_os_error">Failed to delete file from storage.</string>
+    <string name="delete_already_deleted">File was already deleted from storage.</string>
+    <string name="delete_failed_context_null">Delete failed (internal error).</string>
+    <string name="delete_failed_permission">Delete failed due to permission issue.</string>
+    <string name="delete_failed_exception">An error occurred during delete.</string>
+
+
+
+    <string name="pdf_page_count_format">%1$d pages</string>
+
+    <string name="pdf_page_count_unknown"></string>
+
+    <string name="pdf_metadata_format">%1$s • %2$s</string>
+
+
+</resources>

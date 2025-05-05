@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.MC" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">#007DFE</item>
+        <item name="android:windowLightStatusBar">false</item> <item name="android:popupBackground">@android:color/white</item>
+        <item name="colorControlHighlight">#1F007DFE</item> <item name="android:textColor">?attr/colorOnSurface</item>
+
+    </style>
+
+    <style name="App.BottomNavigationView.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+        <item name="marginHorizontal">8dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+        <item name="android:color">@color/lightBlue</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <item name="colorPrimary">#007DFE</item>
+        <item name="colorSecondaryContainer">#D2E2FC</item>
+        <item name="colorOnSecondaryContainer">#007DFE</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout.DropdownPopup" parent="">
+        <item name="colorSurface">@android:color/white</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="colorSurfaceContainer">@android:color/white</item>
+        <item name="colorSurfaceContainerHigh">@android:color/white</item>
+
+        <item name="colorPrimary">#007DFE</item>
+        <item name="colorControlActivated">#007DFE</item>
+
+        <item name="colorOnSurface">@android:color/black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <item name="android:elevation" tools:ignore="NewApi">8dp</item>
+    </style>
+
+
+
+
+    <style name="Theme.MC" parent="Base.Theme.MC" />
+
+</resources>

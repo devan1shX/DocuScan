@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="primary">#6200EE</color>
+    <color name="nav_selected">#6200EE</color>
+    <color name="nav_unselected">#B0BEC5</color>
+
+    <color name="background">#F5F7FA</color>
+    <color name="primaryColor">#6200EE</color>
+    <color name="secondaryColor">#03DAC6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="ripple">#33000000</color>
+    <color name="nav_item_selector">#FF6200EE</color>
+
+
+    <color name="colorPrimary">#007DFE</color>
+    <color name="colorPrimaryVariant">#005FCC</color> <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorBackgroundLightBlue">#D2E2FC</color>
+    <color name="colorBackgroundLightGray">#ECECEC</color>
+
+    <color name="slider_inactive_track">#C0C0C0</color>
+
+    <color name="primaryBlue">#007DFE</color>
+    <color name="lightBlue">#D2E2FC</color>
+    <color name="lightGray">#ECECEC</color>
+
+
+    <color name="mediumGray">#BDBDBD</color>
+    <color name="darkGray">#757575</color>
+    <color name="textPrimary">#212121</color>
+
+
+
+
+    <color name="buttonDisabledGrey">#BDBDBD</color>
+
+</resources>
+
+

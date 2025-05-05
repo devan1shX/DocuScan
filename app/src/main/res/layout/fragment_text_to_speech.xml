@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".tts_fragment.TextToSpeechFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp">
+
+
+            <ImageView
+            android:id="@+id/titleIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="10dp" android:src="@drawable/ic_volume_up"
+            app:tint="#007DFE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewPageTitle"
+            app:layout_constraintBottom_toBottomOf="@id/textViewPageTitle"
+            android:contentDescription="Text to Speech Icon"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewPageTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Configure Speech"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:textColor="#007DFE"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/titleIcon"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textViewIntro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Enter text, adjust settings, and tap 'Speak' to hear it aloud."
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="#666666" android:lineSpacingMultiplier="1.1"
+                app:layout_constraintTop_toBottomOf="@id/textViewPageTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tipsCard"
+                style="?attr/materialCardViewOutlinedStyle" android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="#E3F2FD" app:cardCornerRadius="12dp"
+                app:strokeColor="#A1C9F7" app:strokeWidth="1dp"
+                app:layout_constraintTop_toBottomOf="@id/textViewIntro"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_info_outline"
+                            app:tint="#007DFE"
+                            android:layout_marginEnd="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quick Tips"
+                            android:textAppearance="?attr/textAppearanceTitleSmall"
+                            android:textStyle="bold"
+                            android:textColor="#0059B3"/> </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="• Adjust rate and pitch for different voice effects.\n• Ensure the correct language is selected for best results.\n• Longer text may take a moment to process."
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        android:textColor="#0059B3"
+                        android:lineSpacingMultiplier="1.2"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:hint="Enter text to speak..."
+                app:boxBackgroundColor="@android:color/white"
+                app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeColor="@color/input_box_stroke_color"
+                app:hintTextColor="@color/input_hint_text_color"
+                app:startIconTint="@color/input_icon_tint"
+                app:layout_constraintTop_toBottomOf="@id/tipsCard" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintDimensionRatio="H,1:1" app:layout_constraintHeight_min="180dp"> <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextToSpeak"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:gravity="start|top"
+                android:padding="16dp"
+                android:textColor="@android:color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/controlsCard"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@android:color/white"
+                app:strokeColor="#E0E0E0"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Speech Settings"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_speed"
+                            app:tint="?attr/colorControlNormal" android:layout_marginEnd="8dp"
+                            android:contentDescription="Speech Rate Icon"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:text="Speech Rate"
+                            android:textAppearance="?attr/textAppearanceLabelLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:value="1.0"
+                        android:stepSize="0.1"
+                        android:valueFrom="0.1"
+                        android:valueTo="2.0"
+                        app:labelBehavior="gone"
+                        app:trackHeight="6dp"
+                        app:thumbColor="#007DFE"
+                        app:trackColorActive="#007DFE"
+                        app:trackColorInactive="#D2E2FC"/>
+                    <View
+                        android:layout_width="match_parent" android:layout_height="1dp"
+                        android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
+                        android:background="#E0E0E0"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_pitch"
+                            app:tint="?attr/colorControlNormal" android:layout_marginEnd="8dp"
+                            android:contentDescription="Pitch Icon"/>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:text="Pitch"
+                            android:textAppearance="?attr/textAppearanceLabelLarge"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <com.google.android.material.slider.Slider
+                        android:id="@+id/sliderPitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:value="1.0"
+                        android:stepSize="0.1"
+                        android:valueFrom="0.1"
+                        android:valueTo="2.0"
+                        app:labelBehavior="gone"
+                        app:trackHeight="6dp"
+                        app:thumbColor="#007DFE"
+                        app:trackColorActive="#007DFE"
+                        app:trackColorInactive="#D2E2FC"/>
+                    <View
+                        android:layout_width="match_parent" android:layout_height="1dp"
+                        android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
+                        android:background="#E0E0E0"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/languageInputLayout"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Language"
+                        android:theme="@style/ThemeOverlay.App.TextInputLayout.DropdownPopup"
+                        app:boxBackgroundColor="@android:color/white"
+                        app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:boxStrokeColor="@color/input_box_stroke_color"
+                        app:hintTextColor="@color/input_hint_text_color"
+                        app:endIconTint="@color/dropdown_arrow_tint">
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteTextViewLanguage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:paddingVertical="16dp"
+                            android:textColor="@android:color/black"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSpeak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Speak"
+                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceButton"
+                android:backgroundTint="#007DFE"
+                android:layout_marginTop="32dp" android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingVertical="14dp"
+                app:cornerRadius="24dp"
+                app:icon="@android:drawable/ic_btn_speak_now"
+                app:iconTint="@android:color/white"
+                app:iconGravity="textStart"
+                app:layout_constraintTop_toBottomOf="@id/controlsCard"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintWidth_max="300dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
