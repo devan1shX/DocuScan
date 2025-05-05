@@ -79,6 +79,13 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.1.0")
 
 
+    implementation("com.itextpdf:itext7-core:7.+")
+    implementation("com.itextpdf:kernel:7.+")
+    // Required for text extraction specifically
+    implementation("com.itextpdf:layout:7.+")
+    implementation("org.slf4j:slf4j-android:1.7.+")
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

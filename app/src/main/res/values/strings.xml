@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MC</string>
+    <string name="app_name">DocuScan</string>
     <string name="scan_document">Scan Document</string>
     <string name="error_scanning">Error starting scanner: %s</string>
     <string name="scan_canceled">Scan canceled by user.</string>

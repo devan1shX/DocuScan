@@ -149,7 +149,8 @@
             android:paddingVertical="12dp"
             android:text="Create PDF"
             android:textColor="@color/white"
-            app:backgroundTint="@color/button_create_pdf_background_tint" app:cornerRadius="24dp"
+            app:backgroundTint="@color/primaryBlue"
+            app:cornerRadius="24dp"
             app:icon="@drawable/ic_document_icon"
             app:iconTint="@color/white" />
     </LinearLayout>

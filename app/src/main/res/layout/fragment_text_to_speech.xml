@@ -23,23 +23,23 @@
             android:paddingTop="32dp"
             android:paddingBottom="32dp">
 
-
             <ImageView
-            android:id="@+id/titleIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="10dp" android:src="@drawable/ic_volume_up"
-            app:tint="#007DFE"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textViewPageTitle"
-            app:layout_constraintBottom_toBottomOf="@id/textViewPageTitle"
-            android:contentDescription="Text to Speech Icon"/>
+                android:id="@+id/titleIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_volume_up"
+                app:tint="#007DFE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewPageTitle"
+                app:layout_constraintBottom_toBottomOf="@id/textViewPageTitle"
+                android:contentDescription="Text to Speech Icon"/>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/textViewPageTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Configure Speech"
+                android:text="Text to Speech"
                 android:textAppearance="?attr/textAppearanceHeadlineMedium"
                 android:textColor="#007DFE"
                 android:textStyle="bold"
@@ -52,7 +52,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Enter text, adjust settings, and tap 'Speak' to hear it aloud."
+                android:text="Select a scanned PDF or enter text, adjust settings, and use the controls to play speech."
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="#666666" android:lineSpacingMultiplier="1.1"
                 app:layout_constraintTop_toBottomOf="@id/textViewPageTitle"
@@ -69,7 +69,6 @@
                 app:layout_constraintTop_toBottomOf="@id/textViewIntro"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,19 +86,21 @@
                             android:layout_height="20dp"
                             android:src="@drawable/ic_info_outline"
                             app:tint="#007DFE"
-                            android:layout_marginEnd="8dp"/>
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Info Icon"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Quick Tips"
                             android:textAppearance="?attr/textAppearanceTitleSmall"
                             android:textStyle="bold"
-                            android:textColor="#0059B3"/> </LinearLayout>
+                            android:textColor="#0059B3"/>
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="• Adjust rate and pitch for different voice effects.\n• Ensure the correct language is selected for best results.\n• Longer text may take a moment to process."
+                        android:text="• Select a PDF from 'MyAppScans' to load its text.\n• Playback starts after processing.\n• Pause/Resume continues from the last position.\n• Changing PDF, text, language, rate, or pitch requires reprocessing."
                         android:textAppearance="?attr/textAppearanceBodySmall"
                         android:textColor="#0059B3"
                         android:lineSpacingMultiplier="1.2"/>
@@ -107,13 +108,54 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pdfSelectorInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Select Scanned PDF"
+                android:theme="@style/ThemeOverlay.App.TextInputLayout.DropdownPopup"
+                app:boxBackgroundColor="@android:color/white"
+                app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxStrokeColor="@color/input_box_stroke_color"
+                app:hintTextColor="@color/input_hint_text_color"
+                app:endIconTint="@color/dropdown_arrow_tint"
+                app:layout_constraintTop_toBottomOf="@id/tipsCard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextViewPdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:paddingVertical="16dp"
+                    android:textColor="@android:color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBarPdfLoading"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/pdfSelectorInputLayout"
+                app:layout_constraintTop_toTopOf="@id/pdfSelectorInputLayout"
+                app:layout_constraintBottom_toBottomOf="@id/pdfSelectorInputLayout" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="24dp"
-                android:hint="Enter text to speak..."
+                android:hint="PDF text appears here, or enter manually..."
                 app:boxBackgroundColor="@android:color/white"
                 app:boxCornerRadiusTopStart="16dp" app:boxCornerRadiusTopEnd="16dp"
                 app:boxCornerRadiusBottomStart="16dp"
@@ -121,16 +163,20 @@
                 app:boxStrokeColor="@color/input_box_stroke_color"
                 app:hintTextColor="@color/input_hint_text_color"
                 app:startIconTint="@color/input_icon_tint"
-                app:layout_constraintTop_toBottomOf="@id/tipsCard" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pdfSelectorInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintDimensionRatio="H,1:1" app:layout_constraintHeight_min="180dp"> <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextToSpeak"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textMultiLine"
-                android:gravity="start|top"
-                android:padding="16dp"
-                android:textColor="@android:color/black"/>
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintHeight_min="150dp"
+                app:layout_constraintHeight_max="250dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextToSpeak"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:gravity="start|top"
+                    android:padding="16dp"
+                    android:textColor="@android:color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.card.MaterialCardView
@@ -261,6 +307,19 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <ProgressBar
+                android:id="@+id/progressBarSynthesis"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/controlsCard"
+                app:layout_constraintStart_toStartOf="@id/controlsCard"
+                app:layout_constraintEnd_toEndOf="@id/controlsCard" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSpeak"
                 android:layout_width="0dp"
@@ -268,20 +327,19 @@
                 android:text="Speak"
                 android:textColor="@android:color/white"
                 android:textAppearance="?attr/textAppearanceButton"
-                android:backgroundTint="#007DFE"
-                android:layout_marginTop="32dp" android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:paddingVertical="14dp"
                 app:cornerRadius="24dp"
-                app:icon="@android:drawable/ic_btn_speak_now"
                 app:iconTint="@android:color/white"
                 app:iconGravity="textStart"
-                app:layout_constraintTop_toBottomOf="@id/controlsCard"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/progressBarSynthesis" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintWidth_max="300dp"/>
+                app:layout_constraintWidth_max="300dp"
+                tools:icon="@drawable/ic_play"
+                tools:backgroundTint="#007DFE" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

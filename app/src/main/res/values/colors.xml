@@ -30,9 +30,10 @@
     <color name="textPrimary">#212121</color>
 
 
+    <color name="errorRed">#B00020</color>
 
 
-    <color name="buttonDisabledGrey">#BDBDBD</color>
+
 
 </resources>
 
