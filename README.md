@@ -139,7 +139,7 @@ data class ScannedDocument(
 
 1. **Clone Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/devan1shX/DocuScan.git
    cd DocuScan
    ```
 
